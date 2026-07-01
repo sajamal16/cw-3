@@ -1,4 +1,3 @@
-=======
 <h1>Raw Form Data</h1>
 <pre><?php print_r($_POST); ?></pre>
 
@@ -7,5 +6,3 @@
 <p>Section: <?= htmlspecialchars($_POST['section'] ?? '') ?></p>
 <p>Card Number: <?= htmlspecialchars($_POST['cardnumber'] ?? '') ?></p>
 <p>Card Type: <?= htmlspecialchars($_POST['cardtype'] ?? '') ?></p>
->>>>>>> 2c9de4f (feat: refactor form structure to collect name, section, and credit card details and update processor to
-display input data)
