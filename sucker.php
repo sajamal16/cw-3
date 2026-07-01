@@ -16,3 +16,16 @@ foreach ($options as $key => $value) {
 }
 echo '</pre>';
 ?>
+
+<?php
+echo '<h1>Form input values</h1>';
+echo '<p>Name: ' . htmlspecialchars($_POST['name'] ?? '') . '</p>';
+echo '<p>Section: ' . htmlspecialchars($_POST['section'] ?? '') . '</p>';
+echo '<p>Credit Card Number: ' . htmlspecialchars($_POST['cardnumber'] ?? '') . '</p>';
+echo '<p>Card Type: ' . htmlspecialchars($_POST['cardtype'] ?? '') . '</p>';
+
+echo '<h2>All Form Data</h2>';
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+?>
