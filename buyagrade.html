@@ -1,17 +1,29 @@
 <form action="sucker.php" method="post">
-  <label>Your Name: <input name="visitor_name" type="text"></label>
-  <label>Password: <input name="password" type="password"></label>
+    <dl>
+        <dt>Name</dt>
+        <dd><input type="text" name="name"></dd>
 
-  <!-- Important fix: name must end with [] for multi-select arrays -->
-  <label>Optional features:</label>
-  <select name="options[]" size="6" multiple>
-    <option>Chat</option>
-    <option>Email</option>
-    <option>File transfer</option>
-    <option>Directory</option>
-    <option>Shell</option>
-    <option>Remote control</option>
-  </select>
+        <dt>Section</dt>
+        <dd>
+            <select name="section">
+                <option value="">(Select a section)</option>
+                <option>MA</option>
+                <option>MB</option>
+                <option>MC</option>
+                <option>MD</option>
+                <option>ME</option>
+                <option>MF</option>
+                <option>MG</option>
+                <option>MH</option>
+            </select>
+        </dd>
 
-  <button type="submit">Sign Up</button>
+        <dt>Credit Card</dt>
+        <dd>
+            <input type="text" name="cardnumber"><br>
+            <label><input type="radio" name="cardtype" value="visa">Visa</label>
+            <label><input type="radio" name="cardtype" value="mastercard">MasterCard</label>
+        </dd>
+    </dl>
+    <div><input type="submit" value="I am a giant sucker."></div>
 </form>
