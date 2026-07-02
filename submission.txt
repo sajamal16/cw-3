@@ -1,0 +1,41 @@
+Course: Web Programming
+Assignment: CW 03 Forms and PHP
+Student Name: Howard Fletcher
+Date: 7/1/26
+
+Githhub: https://github.com/sajamal16/cw-3
+CODD: https://codd.cs.gsu.edu/~hfletcher8/wp/cw/cw3/index.html
+1) Development Summary
+- What I built: I built a form for buying an A and a website to process the form. The form 
+is built with html and the processor is built with php.
+- Files I edited: buyagrade.html and sucker.php
+- Main objective achieved: I was able to build a form that collects data from the user and 
+saves it to a file.
+
+2) Test Evidence
+- Test Case A (valid input):
+  Expected: The form should display the data entered by the user.
+  Actual: The form display the data entered by the user.
+- Test Case B (blank field):
+  Expected: The form should display an error message and not save the data.
+  Actual: The form display an error message and does not save the data.
+- Test Case C (multi-select 2+ options):
+  Expected: The form should display the data entered by the user and 
+  save it to the file.
+  Actual: The form display the data entered by the user and saves it to 
+  the file.
+
+3) Critical Thinking Responses
+Q1: If the name attribute in your HTML doesn't exactly match the key you use in $_POST on the PHP side, the value just silently disappears — PHP won't throw an error, it'll just give you a blank or undefined variable, which is exactly the bug we fixed when your form inputs weren't showing up in sucker.php.
+Q2: The square brackets tell PHP to treat the incoming data as an array, so it captures every selected option; without them, PHP only keeps the last selected value and quietly discards the rest, which means your user thinks they picked three things but only one actually gets recorded.
+Q3:isset() only tells you the key exists in the submitted data, a user could submit a completely blank text field and it would still pass isset, so you need something like !empty() or a length check to make sure they actually typed something meaningful.
+Q4: If you write to the file first and validate after, you end up saving incomplete or garbage records that corrupt your data file, validating first acts as a gatekeeper so only clean, complete submissions ever touch your storage.
+Q5: A flat file is dead simple and needs zero setup, which is perfect for a class exercise, but it falls apart fast in production because you can't easily search, update, or handle multiple users writing at the same time without risking data corruption, that's exactly what databases are built to solve.
+Q6: I cross-referenced the assignment requirements against the rendered output by checking that every form field round-tripped correctly from the HTML form through $_POST to the displayed confirmation page, and confirmed the file write captured the same data.
+Q7: At minimum you'd add HTTPS, CSRF tokens to prevent forged submissions, server-side input sanitization to block injection attacks, and real payment processing through a PCI-compliant gateway instead of ever letting a credit card number touch your own server.
+Q8: A clean, consistent layout with clearly labeled sections and visual hierarchy makes it obvious when something is missing or broken, if your output page has a styled template with placeholder spots for each field, you'll immediately notice when a value isn't coming through instead of squinting at a wall of unstyled text.
+
+4) Reflection
+- Biggest debugging challenge: I had a little trouble with php because it was my first time working with it.
+- What I learned about HTML-PHP data flow: I learned that the name attribute in the html must exactly match the key used in $_POST on the PHP side.
+- What I would improve next: I would improve the website by adding more features and making it more user-friendly.
